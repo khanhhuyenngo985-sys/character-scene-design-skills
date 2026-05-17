@@ -1,23 +1,31 @@
-# `.agents/skills` 技能入口
+# `.agents/skills` Skill Entry
 
-> 多参宗白梦客出品。禁止任何盗卖行为。
+This directory contains distributable agent skills for production visual design.
 
-这里放的是可分发给 agent 使用的技能包。目前重点维护两套海外真人短剧生产技能：
+The skills are not limited to overseas short drama. They can be used for animation, games, film, commercials, live-action casting, stylized illustration, historical/fantasy/sci-fi worlds, and any workflow that needs stable character or scene assets.
 
-- `character-design`：人物资产库、角色卡、骨相锚点、关系矩阵、服装状态、MJ casting prompt。
-- `scene-design`：场景资产库、权力空间、竖屏动线、场景状态、MJ/视频场景 prompt。
+## Current Skills
 
-## 推荐调用方式
+- `character-design`: character packets, Character DNA, height/proportion locks, face anchors, wardrobe states, relationship matrices, prop geometry, turnaround consistency, and video-readiness checks.
+- `scene-design`: reusable scenes, environment cards, power-space layouts, actor zones, vertical or horizontal blocking, scene states, material/light anchors, and scene continuity.
+
+## Example Requests
 
 ```text
-帮我用 character-design 做欧美真人短剧人物库。
-帮我用 scene-design 做豪门继承权场景包。
-帮我把角色库和场景包合成一集短剧的前期资产方案。
+Use character-design to create a reusable character asset for a fantasy healer, including a proportion lock, face anchors, outfit variants, signature prop geometry, and video-readiness QC.
 ```
 
-## 读取原则
+```text
+Use scene-design to build a reusable mountain monastery scene pack with entrances, actor zones, material anchors, light states, and image/video prompt anchors.
+```
 
-1. 先读对应技能的 `SKILL.md`。
-2. 需要真人短剧资产方法时，再读 `references/live-action-shortdrama-*.md`。
-3. 需要完整旧方法论时，再读 `references/full-manual.md` 或 `SECTIONS/*.md`。
-4. 不要一开始全量读取所有手册，避免上下文膨胀。
+```text
+Use character-design and scene-design together to plan a short animated sequence: who the characters are, how their silhouettes contrast, where they stand, and what assets need a motion audition.
+```
+
+## Reading Rules
+
+1. Read the relevant `SKILL.md` first.
+2. Load `references/*.md` or `SECTIONS/*.md` only when the task needs deeper detail.
+3. Use short-drama or live-action references only when the user explicitly asks for that workflow.
+4. Avoid loading full manuals by default.
