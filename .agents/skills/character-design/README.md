@@ -16,6 +16,7 @@ It helps create characters that remain recognizable across still images, charact
 - permanent prop geometry and continuity
 - relationship pressure, blocking roles, and ensemble contrast
 - prompt anchors for image/video generation
+- full asset-library character cards that stay separate from scene and prop cards
 
 ## Copy-Paste Requests
 
@@ -50,6 +51,7 @@ Start with `SKILL.md`. Load deeper references only when needed:
 
 - `references/frontloaded-character-assets.md`: reusable asset workflow
 - `references/bone-face-structure-layer.md`: face consistency and close-up identity
+- `references/full-asset-master-v3.md`: optional full scene / character / prop asset-production gate
 - `references/live-action-shortdrama-casting-assets.md`: optional live-action short-drama casting workflow
 - `references/shortdrama-character-production-system.md`: optional short-drama relationship / wardrobe / audition system
 - `references/full-manual.md` or `SECTIONS/*.md`: older expanded theory and templates

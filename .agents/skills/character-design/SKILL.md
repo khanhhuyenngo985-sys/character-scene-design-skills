@@ -19,6 +19,8 @@ For audience-facing protagonists, add a likability pass before polishing design.
 
 For specialized live-action or short-drama asset libraries, treat each image as casting + wardrobe fitting + identity proof. Read the short-drama references only when the user explicitly asks for casting libraries, vertical drama roles, or episode-ready short-drama production.
 
+For full asset-library work that includes scenes, characters, and props, read `references/full-asset-master-v3.md`. Keep character cards separate from scene cards and temporary prop cards; keep permanent wearable prop geometry inside the character anchors.
+
 ## Output Contract
 
 For most tasks, produce a compact character packet:
@@ -64,6 +66,7 @@ For most tasks, produce a compact character packet:
 | Current state / 状态连续性 | body state, emotion, fatigue, facing, prop state, residue, next inherited state |
 | Forbidden drift |  |
 | Frontloaded asset gate |  |
+| Asset class separation / 资产类别边界 | character-only, permanent wearable anchors only, temporary props separated, no scene background unless requested |
 
 If the user asks for a simple prompt, include a prompt-ready anchor block after the card. If they need a reusable prompt packet or model-specific image prompt, convert the card into the local image-prompt framework used by the project.
 
@@ -115,6 +118,8 @@ character DNA -> proportion / height lock -> face and permanent prop lock -> W0 
 ```
 
 Do not let a finished sheet invent the base asset. Complex sheet layouts often normalize bodies, average props, and make front / back views inconsistent. Split the work:
+
+For script-to-asset production, first separate `CHAR_`, `SCENE_`, and `PROP_` cards. A character prompt may include costume layers and permanent wearable anchors, but independent story props should get their own prop card before they are recombined into a final sheet or video prompt.
 
 1. **Proportion / height lock first.**
    - Height is geometry, not only a label. Record net height, styled max height, head ratio, width-to-height ratio, leg ratio, neck visibility, foot baseline, and relative group height.
@@ -388,6 +393,7 @@ Read only when needed:
 | Need | Reference |
 | --- | --- |
 | Full original runtime manual | `references/full-manual.md` |
+| Full scene / character / prop asset production gate | `references/full-asset-master-v3.md` |
 | Frontloaded character assets / 重在前期角色资产 | `references/frontloaded-character-assets.md` |
 | Optional live-action / short-drama casting assets | `references/live-action-shortdrama-casting-assets.md` |
 | Optional short-drama production character system | `references/shortdrama-character-production-system.md` |

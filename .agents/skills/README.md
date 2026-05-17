@@ -4,6 +4,8 @@ This directory contains distributable agent skills for production visual design.
 
 The skills are not limited to overseas short drama. They can be used for animation, games, film, commercials, live-action casting, stylized illustration, historical/fantasy/sci-fi worlds, and any workflow that needs stable character or scene assets.
 
+For full asset production, use the included `references/full-asset-master-v3.md` gate to separate `SCENE_`, `CHAR_`, and `PROP_` cards before writing model-specific prompts.
+
 ## Current Skills
 
 - `character-design`: character packets, Character DNA, height/proportion locks, face anchors, wardrobe states, relationship matrices, prop geometry, turnaround consistency, and video-readiness checks.
@@ -21,6 +23,10 @@ Use scene-design to build a reusable mountain monastery scene pack with entrance
 
 ```text
 Use character-design and scene-design together to plan a short animated sequence: who the characters are, how their silhouettes contrast, where they stand, and what assets need a motion audition.
+```
+
+```text
+Use character-design and scene-design to turn this script into an asset manifest with scene cards, character cards, prop cards, global style locks, and QC checks.
 ```
 
 ## Reading Rules

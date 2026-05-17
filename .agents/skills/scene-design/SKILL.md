@@ -1,11 +1,9 @@
 ---
 name: scene-design
-description: Use when designing, revising, diagnosing, or prompting AI-video scenes, live-action short-drama scene systems, power-space architecture, genre scene packs, vertical blocking lanes, scene state ladders, scene video-readiness gates, 场景设计, 场景板, 真人短剧场景, 海外短剧场景库, 权力空间, 类型场景包, 竖屏blocking, 场景状态, 场景试镜, 环境设计, 空间动线, 建筑空间, 光影色彩, 武侠电影场景, 胡金铨/King Hu scene mood, director-style scene fusion, 场景锚点, @场景名, scene continuity, or scene drift in storyboard/image/video workflows.
+description: Use when designing, revising, diagnosing, or prompting AI-video scenes, environment assets, scene cards, asset-library scenes, power-space architecture, genre scene packs, vertical blocking lanes, scene state ladders, scene video-readiness gates, 场景设计, 场景板, 环境设计, 空间动线, 建筑空间, 光影色彩, 类型场景包, 权力空间, 竖屏blocking, 真人短剧场景, 海外短剧场景库, 武侠电影场景, 胡金铨/King Hu scene mood, director-style scene fusion, 场景锚点, @场景名, scene continuity, or scene drift in storyboard/image/video workflows.
 ---
 
 # Scene Design Runtime
-
-> 多参宗白梦客出品。禁止任何盗卖行为。
 
 This is the lean runtime entry for scene design. The full manual remains available as on-demand knowledge, but the default path should produce a usable scene packet fast.
 
@@ -13,7 +11,9 @@ Core principle: scene is not background. Scene is the physical container of worl
 
 For multi-shot or multi-segment AI video, distinguish the base location from the current scene state. The base scene preserves world identity and fixed anchors; the scene state preserves the specific shot's door/window status, traces, actor zone, camera opportunity, action lane, and before/after continuity.
 
-For live-action overseas short dramas, scene design must become a production system: power-space architecture, 9:16 vertical blocking, recurring scene state, and video readiness. Read `references/live-action-shortdrama-scene-system.md` when the request mentions 欧美真人短剧, overseas short drama, scene library, Midjourney scene refs, vertical drama locations, boardroom / hospital / school / HOA / gala scenes, or asks whether scenes need experiments.
+For full asset-library work that includes scenes, characters, and props, read `references/full-asset-master-v3.md`. Keep scene cards separate from character sheets and prop sheets; include atmosphere people only when they clarify scale, occupation, or world function.
+
+For optional live-action overseas short dramas, scene design becomes a specialized production system: power-space architecture, 9:16 vertical blocking, recurring scene state, and video readiness. Read `references/live-action-shortdrama-scene-system.md` when the request mentions 欧美真人短剧, overseas short drama, scene library, Midjourney scene refs, vertical drama locations, boardroom / hospital / school / HOA / gala scenes, or asks whether scenes need experiments.
 
 ## Output Contract
 
@@ -32,6 +32,7 @@ For most tasks, produce a compact scene packet:
 | Power-space mechanism / 权力空间机制 | who controls entry, seat, desk, bed, podium, document, or light |
 | Fixed anchors |  |
 | Narrative props |  |
+| Atmosphere people / 氛围人物 | none / small scale extras / crowd type, with era and behavior |
 | Light direction / source |  |
 | Color / material logic |  |
 | Scene state ladder / 场景状态 | S0 normal order, S1 pressure setup, S2 humiliation, S3 reveal, S4 aftermath, S5 power reversal |
@@ -95,11 +96,13 @@ Do not import short-drama assumptions unless the user explicitly asks for short 
 4. Add narrative objects.
    - Use 1-3 props, marks, or traces that reveal world, habit, danger, relationship, or change.
    - A prop should be able to cause or clarify an action.
+   - If an object needs a reusable silhouette, mechanism, or readable close-up, split it into a `PROP_` card before recombining it into scene prompts.
 
-5. Lock light, color, and material.
+5. Lock light, color, material, and atmosphere people.
    - Light directs attention and emotion.
    - Color sets first emotional read.
    - Material tells the world rule through texture and use.
+   - Atmosphere people should match era, occupation, scale, and behavior; they must not steal focus from the actor zone.
 
 6. Handoff to storyboard or AI video.
    - Reduce the scene to stable anchors.
@@ -136,6 +139,8 @@ Keep consistent: [3-5 anchors].
 Avoid: [forbidden drift].
 ```
 
+For reusable asset-library scene cards, follow the seven-layer order from `references/full-asset-master-v3.md`: worldview positioning, location/geography, main structure, extended space, natural/background layers, light/color, and technical/style spec.
+
 For multi-shot scenes, repeat the `@SceneTag`, fixed anchor, and activity zone before changing camera language.
 
 ## Space-To-Action Checks
@@ -150,6 +155,7 @@ For multi-shot scenes, repeat the `@SceneTag`, fixed anchor, and activity zone b
 - Does it connect to the previous and next scene?
 - For vertical short drama, is there a clear 9:16 actor lane and readable first 3-second power image?
 - Does the scene have a specific institutional or social power function, not just luxury decor?
+- If atmosphere people appear, do they belong to this scene type and stay subordinate to the main action lane?
 - Can a character enter, be blocked, hand over a document, reveal evidence, or reverse power inside this layout?
 - Are door, window, desk, bed, podium, or table positions stable enough for a video test?
 - Does the scene state preserve traces and changed object positions instead of resetting clean?
@@ -161,6 +167,7 @@ Read `references/full-manual.md` only when needed. Search these section names:
 | Need | Search / Section |
 | --- | --- |
 | Full original scene manual | `references/full-manual.md` |
+| Full scene / character / prop asset production gate | `references/full-asset-master-v3.md` |
 | Scene card format | `场景板标准规范` |
 | Narrative task diagnosis | `场景诊断能力`, `叙事任务分类` |
 | Scene tags and prompt naming | `分镜命名与场景锚定规则` |

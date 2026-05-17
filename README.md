@@ -1,6 +1,6 @@
 # Character + Scene Design Skills
 
-This repository contains reusable skills for designing production-ready characters, scenes, visual assets, and prompts for image and video generation.
+This repository contains reusable skills for designing production-ready characters, scenes, props, visual assets, and prompts for image and video generation.
 
 The goal is not just to make attractive pictures. These skills help turn ideas into stable assets: character identity, body proportion, face anchors, wardrobe states, prop geometry, relationship pressure, scene layout, blocking, continuity, and model-ready prompts.
 
@@ -15,6 +15,7 @@ Use these skills for many kinds of visual projects:
 - live-action casting assets and wardrobe fitting boards
 - character sheets, turnaround sheets, expression sheets, prop callouts, and outfit variants
 - reusable scenes, power-space layouts, blocking plans, and video reference boards
+- script-to-asset manifests that separate `SCENE_`, `CHAR_`, and `PROP_` cards before prompting
 
 Short-drama, overseas casting, and vertical-video workflows are supported as optional specializations, not the default scope.
 
@@ -32,12 +33,18 @@ Use character-design to redesign this reference character while preserving the o
 Use scene-design to create a reusable scene pack for a royal archive, including layout, entrances/exits, actor zones, light/material anchors, blocking lanes, and continuity notes for image/video generation.
 ```
 
+```text
+Use character-design and scene-design to turn this script into an asset manifest: scene cards, character cards, prop cards, global style lock, and QC checks for material, era/world consistency, body proportion, and prop geometry.
+```
+
 ## Main Skills
 
 | Skill | Use It For | Typical Outputs |
 | --- | --- | --- |
 | `character-design` | Characters, casts, character sheets, height/proportion locks, face anchors, wardrobe states, prop anchors, relationship matrices, video-readiness checks | Character packet, proportion base, W0 turnaround, expression sheet, wardrobe ladder, prompt anchors |
 | `scene-design` | Scene systems, environment boards, power-space architecture, blocking lanes, scene states, continuity anchors, image/video scene prompts | Scene card, layout logic, reusable scene pack, blocking plan, video audition prompt |
+
+Both skills include `references/full-asset-master-v3.md`, a shared production gate for separating scene, character, and prop assets before model-specific prompts are written.
 
 ## Character Workflow
 
@@ -83,12 +90,26 @@ Quality checks:
 - State changes are visible through light, props, residue, damage, weather, or arrangement.
 - The scene can be used by the target image/video model without relying on hidden exposition.
 
+## Full Asset Workflow
+
+```text
+Script / concept
+-> Global image type, genre, era, and style lock
+-> Asset manifest: SCENE_ / CHAR_ / PROP_
+-> Scene seven-layer cards
+-> Character body / face / costume / permanent anchor cards
+-> Prop four-view cards
+-> Model-specific prompts
+-> QC for separation, material, era/world, proportion, prop geometry, and color
+```
+
 ## Optional Specializations
 
 The repository includes deeper references for specific workflows, such as:
 
 - live-action casting and wardrobe-fitting assets
 - vertical short-drama cast and scene systems
+- full scene / character / prop asset production
 - bone / face structure consistency
 - genre cast packs and relationship matrices
 - traditional / historical / stylized visual design
