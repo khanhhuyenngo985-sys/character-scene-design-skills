@@ -1,6 +1,6 @@
 # Frontloaded Character Assets / 重在前期角色资产
 
-Source distilled from `/Users/baimengke/Documents/【内门】重在前期角色设计_逐字稿.docx`.
+This reference summarizes a frontloaded asset workflow for characters, casts, and reusable subject libraries.
 
 Use this when a character, cast, or subject library must survive multi-reference image/video production. The point is not to make a pretty character. The point is to make a memorable, stable, performable asset that gives the model better reference material than prompt words alone can provide.
 

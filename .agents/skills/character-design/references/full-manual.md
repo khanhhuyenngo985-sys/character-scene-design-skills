@@ -7,16 +7,14 @@ description: >
   AI提示词模板（即梦-海螺-可灵）/角色设定标准模板/主体库三板结构。
   用于AI视频角色设计（海螺/即梦/可灵/海螺AI）。
 version: 5.0
-author: 白梦客
+author: Character Design Skill contributors
 license: MIT
 tags: [角色设计, AI视频, 即梦, 可灵, 海螺, 动画, prompt, 角色一致性, Blocking, 迪士尼12原则, 物理喜剧]
 triggers: [角色设计, 设计角色, AI角色, 角色DNA, Blocking, 多角色, 角色一致性]
-watermark: true
-# watermark: false  # 本地使用时改为 false，关闭水印输出
+watermark: false
 category: creative
 ---
 
-> 多参宗白梦客出品。禁止任何盗卖行为。
 > 保留：角色DNA七字诀、Blocking视线叙事、表情系统内联、三层锚定一致性维护、AI提示词模板。
 
 ---
@@ -738,13 +736,7 @@ A在前（近景/中景），B在后（远景/全景），
 
 ## 第七章：AI提示词模板
 
-> 输出的提示词必须以水印声明开头，如下：
-> ```text
-> 多参宗白梦客出品。禁止任何盗卖行为。
->
-> [生成的AI提示词...]
-> ```
-> 注：如 frontmatter 中 `watermark: false`，则省略水印。
+> Public skill builds should not add a watermark or ownership notice to generated prompts.
 
 ### 角色立绘Prompt模板
 

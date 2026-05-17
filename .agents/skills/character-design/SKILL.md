@@ -1,23 +1,23 @@
 ---
 name: character-design
-description: Use when designing, revising, diagnosing, or prompting AI-video characters, live-action short-drama casting assets, MJ character libraries, character cards, relationship matrices, genre cast packs, wardrobe state ladders, video-readiness gates, 前期角色资产, 欧美真人短剧人物库, 角色关系矩阵, 类型角色包, 服装状态卡, 视频试镜, 群像先行, 原型混搭, 角色身份增益, 擅长能力, 角色一致性, 角色DNA, 表情姿态, 多角色Blocking, 服化道, 道具锚点, or character drift in 即梦/可灵/海螺/AI video workflows.
+description: Use when designing, revising, diagnosing, or prompting AI-video or image-generation characters, character sheets, casting assets, character cards, relationship matrices, genre cast packs, wardrobe state ladders, height/proportion locks, turnaround consistency, video-readiness gates, 身高比例锁, 三视图一致性, 成品角色图, 角色关系矩阵, 服装状态卡, 角色一致性, 角色DNA, 表情姿态, 服化道, 道具锚点, or character drift in multi-shot workflows.
 ---
 
 # Character Design Runtime
 
-> 多参宗白梦客出品。禁止任何盗卖行为。
-
 This is the lean runtime entry for character design. The full manual remains available as on-demand knowledge, but the default path should produce a usable character packet fast.
 
-Core principle: make the character memorable, stable, and filmable. Do not optimize for prettiness; optimize for difference, silhouette, behavior, identity permission, and repeatable visual anchors. For production-critical roles, treat the character card as a frontloaded asset: the reference image is already part of the prompt.
+Core principle: make the character memorable, stable, and filmable. Do not optimize for prettiness; optimize for difference, silhouette, behavior, identity permission, and repeatable visual anchors. For production-critical roles, treat the character card as a frontloaded asset: the reference image is already part of the prompt. The workflow is model-agnostic; adapt the prompt wording to the user's image or video tool.
+
+When an existing character reference or unusual body shape matters, do not start with a finished character sheet. First lock the base asset: proportion / height, face, permanent props, then W0 turnaround. A full sheet with expressions, wardrobe, skills, and text comes only after those bases pass QC.
 
 For multi-shot or multi-segment AI video, separate immutable identity anchors from mutable character state. The same character should keep silhouette, face/hair, costume category, signature prop, and posture habit, while body state, emotion, fatigue, damage, prop ownership, gaze, and action residue evolve visibly across segments.
 
-For cross-scene or cross-style Seedance work, make a character keyframe or character sheet before video prompting. The sheet should lock identity anchors, expression range, costume, permanent wearable props, and the hand / body surfaces that interact with those props. Seedance should animate a solved asset, not invent the role design inside the action prompt.
+For cross-scene or cross-style video work, make a character keyframe or character sheet before video prompting. The sheet should lock identity anchors, expression range, costume, permanent wearable props, and the hand / body surfaces that interact with those props. The video model should animate a solved asset, not invent the role design inside the action prompt.
 
 For audience-facing protagonists, add a likability pass before polishing design. A character becomes easier to follow when the first scene visibly gives at least one of: unfair treatment, kindness toward a specific subject, or distinctive ability / success potential. These must become actions, object relationships, posture, props, or skills, not personality labels.
 
-For live-action overseas short-drama asset libraries, treat each image as casting + wardrobe fitting + identity proof. Use Western-market multicultural casting, full-body framing, ordinary believable actor faces, practical wardrobe, visible story power, and light bone/face-structure anchors. Read `references/live-action-shortdrama-casting-assets.md` when the request mentions 欧美真人短剧, overseas short drama, MJ character library, casting, wardrobe fitting, or bulk character assets. If the user wants the library to become usable for episodes, also read `references/shortdrama-character-production-system.md`.
+For specialized live-action or short-drama asset libraries, treat each image as casting + wardrobe fitting + identity proof. Read the short-drama references only when the user explicitly asks for casting libraries, vertical drama roles, or episode-ready short-drama production.
 
 ## Output Contract
 
@@ -26,6 +26,7 @@ For most tasks, produce a compact character packet:
 | Field | Answer |
 | --- | --- |
 | Character tag | `@name` |
+| Asset stage / 资产阶段 | proportion_lock, face_lock, W0_turnaround, wardrobe_ladder, final_sheet, video_ready |
 | Narrative function |  |
 | Ensemble contrast / 群像差异 |  |
 | Identity buff / 身份增益 |  |
@@ -40,6 +41,7 @@ For most tasks, produce a compact character packet:
 | Likability levers | unfair treatment, specific kindness, distinctive ability / success potential |
 | Silhouette |  |
 | Body proportions |  |
+| Height / proportion lock | net height, styled max height, head ratio, width-height ratio, leg ratio, baseline rule |
 | Face / hair anchor |  |
 | Bone structure / 骨相锚点 | cranial shape, face envelope, cheek / jaw, eye structure, nose / lips |
 | Skin / texture anchor | age, undertone, pores, finish, marks |
@@ -48,6 +50,7 @@ For most tasks, produce a compact character packet:
 | Color anchor |  |
 | Costume / material anchor |  |
 | Prop anchor |  |
+| Permanent prop geometry / 常驻道具几何 | wearing side, shape, attachment, material, front/back visibility |
 | Posture signature |  |
 | Expression range |  |
 | Action signature |  |
@@ -55,13 +58,14 @@ For most tasks, produce a compact character packet:
 | Relationship edges / 关系压力线 | power_over, protects, betrays, secret_about, romantic_pressure |
 | Genre cast pack slot / 类型包槽位 | lead_entry, primary_desire, shadow_rival, family_power, institutional_gatekeeper, etc. |
 | Wardrobe state ladder / 服装状态 | W0 public mask, W1 humiliation workwear, W2 pressure damage, W3 reveal event, W4 intimate recovery, W5 final power |
+| Turnaround contract / 三视图契约 | front/side/back must preserve body width, leg length, waist line, straps, prop side, back logic |
 | Video readiness / 视频可用性 | video_ready, needs_face_lock, needs_prop_lock, image_only, reroll_priority |
 | Consistency anchors |  |
 | Current state / 状态连续性 | body state, emotion, fatigue, facing, prop state, residue, next inherited state |
 | Forbidden drift |  |
 | Frontloaded asset gate |  |
 
-If the user asks for a simple prompt, include a prompt-ready anchor block after the card. If they need a reusable prompt packet or model-specific image prompt, hand off to `/Users/baimengke/.agents/skills/prompt-framework/references/character-image-prompt.md`.
+If the user asks for a simple prompt, include a prompt-ready anchor block after the card. If they need a reusable prompt packet or model-specific image prompt, convert the card into the local image-prompt framework used by the project.
 
 ## Story Upstream Bridge
 
@@ -72,7 +76,7 @@ Use the installed story skills as diagnosis before visual design when the user p
 | Story world, ensemble, genre, and relationship map are unclear | `story-five-elements` | narrative function, ensemble contrast, relationship / blocking role |
 | A specific role needs a grounded card | `character-profile` | identity buff, Want / Need / Flaw, failure habit, likability levers |
 | The character crosses plot turns or multiple segments | `plot-keypoints` | current state, action residue, next inherited state, costume / prop state |
-| Visual continuity must survive later shots or segments | `animation-studio/references/story-fact-ledger.md` | protected anchors, prop ownership, state changes, forbidden drift |
+| Visual continuity must survive later shots or segments | project story ledger / continuity notes | protected anchors, prop ownership, state changes, forbidden drift |
 
 Translate story findings into visible anchors:
 
@@ -101,6 +105,42 @@ Lock only the face traits that must survive generation:
 
 For groups, vary at least two of face envelope, cheek/jaw logic, eye geometry, hairline, skin texture, or posture so faces do not merge.
 
+## Production Asset Pipeline
+
+Use this when making reusable character assets, GPT Image / MJ / Nano Banana character sheets, or any role with a strong reference image.
+
+```text
+CHAR_ASSET_PIPELINE_V1
+character DNA -> proportion / height lock -> face and permanent prop lock -> W0 turnaround -> wardrobe states -> final character sheet -> motion audition
+```
+
+Do not let a finished sheet invent the base asset. Complex sheet layouts often normalize bodies, average props, and make front / back views inconsistent. Split the work:
+
+1. **Proportion / height lock first.**
+   - Height is geometry, not only a label. Record net height, styled max height, head ratio, width-to-height ratio, leg ratio, neck visibility, foot baseline, and relative group height.
+   - If the character is nonstandard, exaggerate the protected silhouette in the base prompt. Example for a short round role: `2.8-3.2 heads tall, body width 80-90% of net height, legs 12-18% of height, invisible neck, low center of gravity`.
+   - A height ruler must annotate the body, not stretch it. If the ruler makes the model taller, remove the ruler and make a clean proportion base first.
+
+2. **Face and mouth / hand anchors second.**
+   - Lock the few features that make the face survive: face envelope, cheeks, eyes, nose, mouth shape, brows, skin marks, hairline.
+   - Small mouths, teeth, tusks, whiskers, gloves, wrapped hands, or unusual hands must be named as visible anchors. Do not let texture, beard, fur, or blush cover the mouth.
+
+3. **Permanent prop geometry third.**
+   - Permanent wearable props need exact geometry, side, attachment, material, and front / back behavior.
+   - Name what the prop is not when common drift is likely. Example: a waist gourd is a double-bulb vessel, small upper bulb, larger lower bulb, pinched waist, short mouth, tied by cord; not a round ball, bell, water bottle, pumpkin, pouch, or jar.
+
+4. **W0 turnaround before full sheets.**
+   - Generate only front / side / back in the default outfit before expressions, skills, wardrobe, or text.
+   - The views must look like one physical puppet rotated: same body width, head size, leg length, waist height, sleeve length, hem shape, strap path, prop side, bag side, hair mass, and foot baseline.
+   - Back view must explain front anchors instead of inventing new ones. If the front has a diagonal strap, gourd on right hip, bag on left hip, or sleeve patch, decide how each appears from the back.
+
+5. **Wardrobe states after the body passes.**
+   - Clothing changes must wrap the locked body. They may change layer, material, color accents, armor level, dirt, damage, or ceremonial detail, but not height, head ratio, body width, leg length, face, hair, or permanent prop ownership.
+
+6. **Final character sheet last.**
+   - Build the finished sheet from the passed bases. Use minimal readable labels and keep long biographies outside the generated image when text accuracy matters.
+   - If a final sheet drifts, return to the failing base gate. Do not patch a full sheet that never passed proportion or turnaround QC.
+
 ## Runtime Flow
 
 1. Identify narrative function.
@@ -122,7 +162,9 @@ For groups, vary at least two of face envelope, cheek/jaw logic, eye geometry, h
 3. For new or production-critical characters, run the frontloaded asset gate.
    - Design the cast or subject-library board before polishing a single person.
    - Mix archetypes/functions, then convert them into posture, color, costume, prop, and identity-buff anchors.
-   - For live-action short-drama libraries, also check gender/age/ethnicity distribution, lead attractiveness tier, bone/face-structure contrast, and whether each role has a visible social or institutional power lever.
+   - For existing references or unusual silhouettes, create a proportion / height lock before any final sheet.
+   - Pass W0 front / side / back consistency before adding wardrobe variants, expression rows, skill panels, or dense text.
+   - For live-action casting libraries, also check gender/age/ethnicity distribution, lead attractiveness tier, bone/face-structure contrast, and whether each role has a visible social or institutional power lever.
    - For recurring wearable props, include callouts or multi-view details before video: wearing side, reveal pose, button / clasp / mouth surface, and failure mode.
    - Create posture states, not only a standing reference: default, pressure, relationship, action, failure, and arc.
    - Test a still asset with a short motion audition before trusting it in multi-reference video.
@@ -147,12 +189,12 @@ For groups, vary at least two of face envelope, cheek/jaw logic, eye geometry, h
    - Separate by height, color, left/center/right, distance, eyeline, and movement rhythm.
    - Do not let two characters share the same silhouette, palette, and posture role.
 
-7A. For short-drama production, convert the cast into a playable system.
+7A. For serialized, ensemble, or episode-based production, convert the cast into a playable system.
    - Build a relationship matrix: power_over, protects, betrays, secret_about, romantic_pressure, and scene_trigger.
-   - Build a genre cast pack: 8-12 role slots that satisfy the genre promise before choosing extra faces.
-   - Build a wardrobe state ladder for recurring roles: public mask, humiliation, pressure damage, reveal event, intimate recovery, final power.
-   - Run a video readiness gate for core assets before multi-episode production.
-   - For the detailed method, read `references/shortdrama-character-production-system.md`.
+   - Build a genre or world cast pack: 8-12 role slots that satisfy the project promise before choosing extra faces.
+   - Build a wardrobe state ladder for recurring roles: public mask, work state, pressure damage, reveal event, recovery, final state.
+   - Run a video readiness gate for core assets before multi-scene or multi-episode production.
+   - For short-drama specialization, read `references/shortdrama-character-production-system.md`.
 
 8. Handoff to AI video.
    - Reduce the design to 3-5 stable prompt anchors.
@@ -226,6 +268,7 @@ Use the seven-part character DNA, but keep it concise:
 Every shot or prompt should preserve:
 
 - Body shape and height relationship.
+- Numeric proportion lock when present: net height, styled max height, head ratio, width-height ratio, leg ratio, baseline.
 - Face / hair marker.
 - Main color block.
 - Costume material or accessory.
@@ -233,6 +276,13 @@ Every shot or prompt should preserve:
 - Posture or movement habit.
 
 When consistency breaks, fix anchors before adding more style words.
+
+For character sheets and turnarounds, also verify:
+
+- Front, side, and back are the same body rotated, not three similar redesigns.
+- Feet share one baseline; head, waist, hem, knee, and prop heights line up.
+- Straps, belts, patches, bags, scabbards, gourds, tails, wings, horns, backpacks, or robes continue logically across views.
+- Wardrobe variants keep the locked body and permanent props; clothing changes do not create a taller, slimmer, younger, or more heroic version.
 
 Every multi-segment prompt should also carry:
 
@@ -256,8 +306,11 @@ For these, record:
 | Interaction surface | button, crown, clasp, mouth, string, bell, screen |
 | Failure mode | too small to press, slips under sleeve, swings late, catches on cloth |
 | Continuity state | intact, cracked, glowing, ringing, loose, stained |
+| Geometry guard | exact shape and common wrong substitutes to avoid |
 
 Wearable props should be included in the character anchor block and repeated in video prompts when they drive action. They should not be promoted to an independent `@Prop` unless the scene treats them as a separate object detached from the body.
+
+If the prop is visually easy to average into a generic object, define its silhouette. For example, a waist gourd is a double-bulb vessel with a small upper bulb, larger lower bulb, pinched waist, short neck, cord tied around the neck, and natural gourd / clay-brown material; it is not a sphere, bell, pouch, jar, canteen, pumpkin, or water bottle.
 
 ## Style-Specific Character Sheets
 
@@ -278,7 +331,7 @@ This style is useful when the design needs strong graphic memory and clear ident
 Use this when handing to image or video models:
 
 ```text
-[@CharacterTag], [identity buff], [specialty/toolchain], [body shape], [face/hair anchor], [main color/costume/material], [signature prop], [posture/action signature].
+[@CharacterTag], [identity buff], [specialty/toolchain], [body shape + proportion lock when needed], [face/hair anchor], [main color/costume/material], [signature prop geometry], [posture/action signature].
 Keep consistent: [3-5 anchors].
 Avoid: [forbidden drift].
 ```
@@ -302,8 +355,13 @@ For multi-character shots, write each character as a separate block, then descri
 - Is the character only attractive, not memorable?
 - Was the character designed alone before seeing the ensemble?
 - Could two characters merge if the model saw them together?
+- Did the sheet start before the proportion / height lock passed?
+- Did a height ruler stretch, slim, or standardize the character's body?
+- Do front / side / back look like the same physical asset rotated?
+- Do wardrobe variants preserve the same body width, head ratio, leg length, waist line, face, hair, and permanent props?
 - Does the design rely on tiny details that vanish in video?
 - Is the prop decorative instead of action-bearing?
+- Is the permanent prop geometrically identifiable, or did it drift into a generic ball, pouch, bottle, badge, or ornament?
 - Do color, costume, and prop leave a memory trace or carry an arc?
 - Has the static card passed a motion audition?
 - Does the identity buff unlock visible actions, objects, or authority?
@@ -314,11 +372,11 @@ For multi-character shots, write each character as a separate block, then descri
 - Are emotion words translated into face, posture, and body direction?
 - Is the forbidden drift list explicit?
 - For live-action casting assets: is the full body visible with shoes and floor?
-- For overseas Western roles: did the face drift into generic Asian web-drama casting?
+- For culturally specific or live-action casting roles: did face, age, ethnicity, styling, or actor type drift into an unrelated market default?
 - Are bone/face anchors specific enough to preserve identity without turning into a generic beauty face?
 - Does the image look like a believable actor fitting, not a fashion editorial or concept-art character?
 - For power roles: is the legal/social lever visible and specific, or just "rich / powerful"?
-- For short-drama production: do relationship edges create scene triggers rather than static biography?
+- For episodic or ensemble production: do relationship edges create scene triggers rather than static biography?
 - Does the genre cast pack cover the required slots before adding decorative characters?
 - Do recurring roles have wardrobe states that show story arc without losing identity?
 - Has the asset passed a motion audition before being labeled video-ready?
@@ -331,8 +389,8 @@ Read only when needed:
 | --- | --- |
 | Full original runtime manual | `references/full-manual.md` |
 | Frontloaded character assets / 重在前期角色资产 | `references/frontloaded-character-assets.md` |
-| Live-action overseas short-drama casting assets / 欧美真人短剧人物库、MJ casting、成品图筛选 | `references/live-action-shortdrama-casting-assets.md` |
-| Short-drama production character system / 关系矩阵、类型角色包、服装状态、视频试镜门 | `references/shortdrama-character-production-system.md` |
+| Optional live-action / short-drama casting assets | `references/live-action-shortdrama-casting-assets.md` |
+| Optional short-drama production character system | `references/shortdrama-character-production-system.md` |
 | Bone and face structure / 骨相、脸型、五官、防脸漂移 | `references/bone-face-structure-layer.md` |
 | DNA details | `SECTIONS/01_角色DNA七字诀详解.md` |
 | Consistency and AI drift | `SECTIONS/02_角色一致性维护.md` |
@@ -346,6 +404,6 @@ Read only when needed:
 | Reference-image philosophy | `SECTIONS/10_参考图哲学与IP宇宙.md` |
 | Ensemble design | `SECTIONS/11_群像设计专题.md` |
 
-## Animation-Studio Handoff
+## Workflow Handoff
 
-When used inside `animation-studio`, return the compact character packet and prompt anchors. Let `animation-studio` decide story structure, scene design, shot timing, and model segmentation; let `prompt-framework` turn anchors into stable `CHAR_` or `SHOT_` prompt packets when needed.
+When this skill is part of a larger production workflow, return the compact character packet, prompt anchors, asset-stage gates, and QC notes. Let the story or video workflow decide scene structure, shot timing, and model segmentation; let the local prompt framework turn anchors into stable `CHAR_` or `SHOT_` prompt packets when needed.

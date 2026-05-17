@@ -17,7 +17,7 @@ For cross-scene or cross-style video work, make a character keyframe or characte
 
 For audience-facing protagonists, add a likability pass before polishing design. A character becomes easier to follow when the first scene visibly gives at least one of: unfair treatment, kindness toward a specific subject, or distinctive ability / success potential. These must become actions, object relationships, posture, props, or skills, not personality labels.
 
-For live-action overseas short-drama asset libraries, treat each image as casting + wardrobe fitting + identity proof. Use Western-market multicultural casting, full-body framing, ordinary believable actor faces, practical wardrobe, visible story power, and light bone/face-structure anchors. Read `references/live-action-shortdrama-casting-assets.md` when the request mentions 欧美真人短剧, overseas short drama, MJ character library, casting, wardrobe fitting, or bulk character assets. If the user wants the library to become usable for episodes, also read `references/shortdrama-character-production-system.md`.
+For specialized live-action or short-drama asset libraries, treat each image as casting + wardrobe fitting + identity proof. Read the short-drama references only when the user explicitly asks for casting libraries, vertical drama roles, or episode-ready short-drama production.
 
 ## Output Contract
 
@@ -164,7 +164,7 @@ Do not let a finished sheet invent the base asset. Complex sheet layouts often n
    - Mix archetypes/functions, then convert them into posture, color, costume, prop, and identity-buff anchors.
    - For existing references or unusual silhouettes, create a proportion / height lock before any final sheet.
    - Pass W0 front / side / back consistency before adding wardrobe variants, expression rows, skill panels, or dense text.
-   - For live-action short-drama libraries, also check gender/age/ethnicity distribution, lead attractiveness tier, bone/face-structure contrast, and whether each role has a visible social or institutional power lever.
+   - For live-action casting libraries, also check gender/age/ethnicity distribution, lead attractiveness tier, bone/face-structure contrast, and whether each role has a visible social or institutional power lever.
    - For recurring wearable props, include callouts or multi-view details before video: wearing side, reveal pose, button / clasp / mouth surface, and failure mode.
    - Create posture states, not only a standing reference: default, pressure, relationship, action, failure, and arc.
    - Test a still asset with a short motion audition before trusting it in multi-reference video.
@@ -189,12 +189,12 @@ Do not let a finished sheet invent the base asset. Complex sheet layouts often n
    - Separate by height, color, left/center/right, distance, eyeline, and movement rhythm.
    - Do not let two characters share the same silhouette, palette, and posture role.
 
-7A. For short-drama production, convert the cast into a playable system.
+7A. For serialized, ensemble, or episode-based production, convert the cast into a playable system.
    - Build a relationship matrix: power_over, protects, betrays, secret_about, romantic_pressure, and scene_trigger.
-   - Build a genre cast pack: 8-12 role slots that satisfy the genre promise before choosing extra faces.
-   - Build a wardrobe state ladder for recurring roles: public mask, humiliation, pressure damage, reveal event, intimate recovery, final power.
-   - Run a video readiness gate for core assets before multi-episode production.
-   - For the detailed method, read `references/shortdrama-character-production-system.md`.
+   - Build a genre or world cast pack: 8-12 role slots that satisfy the project promise before choosing extra faces.
+   - Build a wardrobe state ladder for recurring roles: public mask, work state, pressure damage, reveal event, recovery, final state.
+   - Run a video readiness gate for core assets before multi-scene or multi-episode production.
+   - For short-drama specialization, read `references/shortdrama-character-production-system.md`.
 
 8. Handoff to AI video.
    - Reduce the design to 3-5 stable prompt anchors.
@@ -372,11 +372,11 @@ For multi-character shots, write each character as a separate block, then descri
 - Are emotion words translated into face, posture, and body direction?
 - Is the forbidden drift list explicit?
 - For live-action casting assets: is the full body visible with shoes and floor?
-- For overseas Western roles: did the face drift into generic Asian web-drama casting?
+- For culturally specific or live-action casting roles: did face, age, ethnicity, styling, or actor type drift into an unrelated market default?
 - Are bone/face anchors specific enough to preserve identity without turning into a generic beauty face?
 - Does the image look like a believable actor fitting, not a fashion editorial or concept-art character?
 - For power roles: is the legal/social lever visible and specific, or just "rich / powerful"?
-- For short-drama production: do relationship edges create scene triggers rather than static biography?
+- For episodic or ensemble production: do relationship edges create scene triggers rather than static biography?
 - Does the genre cast pack cover the required slots before adding decorative characters?
 - Do recurring roles have wardrobe states that show story arc without losing identity?
 - Has the asset passed a motion audition before being labeled video-ready?
@@ -389,8 +389,8 @@ Read only when needed:
 | --- | --- |
 | Full original runtime manual | `references/full-manual.md` |
 | Frontloaded character assets / 重在前期角色资产 | `references/frontloaded-character-assets.md` |
-| Live-action overseas short-drama casting assets / 欧美真人短剧人物库、MJ casting、成品图筛选 | `references/live-action-shortdrama-casting-assets.md` |
-| Short-drama production character system / 关系矩阵、类型角色包、服装状态、视频试镜门 | `references/shortdrama-character-production-system.md` |
+| Optional live-action / short-drama casting assets | `references/live-action-shortdrama-casting-assets.md` |
+| Optional short-drama production character system | `references/shortdrama-character-production-system.md` |
 | Bone and face structure / 骨相、脸型、五官、防脸漂移 | `references/bone-face-structure-layer.md` |
 | DNA details | `SECTIONS/01_角色DNA七字诀详解.md` |
 | Consistency and AI drift | `SECTIONS/02_角色一致性维护.md` |
