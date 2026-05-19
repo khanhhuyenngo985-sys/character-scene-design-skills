@@ -14,6 +14,7 @@ Use these skills for many kinds of visual projects:
 - fantasy, sci-fi, historical, wuxia, modern, stylized, or realistic roles
 - live-action casting assets and wardrobe fitting boards
 - character sheets, turnaround sheets, expression sheets, prop callouts, and outfit variants
+- finished multi-panel character sheets with hero portrait, turnaround, expressions, wardrobe states, prop details, action/skill panels, and palette
 - reusable scenes, power-space layouts, blocking plans, and video reference boards
 - script-to-asset manifests that separate `SCENE_`, `CHAR_`, and `PROP_` cards before prompting
 

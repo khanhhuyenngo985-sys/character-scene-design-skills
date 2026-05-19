@@ -11,6 +11,7 @@ It helps create characters that remain recognizable across still images, charact
 - height / proportion locks and body-silhouette preservation
 - face, hair, mouth, hand, skin, and bone-structure anchors
 - W0 front / side / back turnarounds
+- finished multi-panel character sheets / 成品角色图
 - expression rows and action-pose vocabulary
 - wardrobe state ladders and costume variants
 - permanent prop geometry and continuity
@@ -52,6 +53,7 @@ Start with `SKILL.md`. Load deeper references only when needed:
 - `references/frontloaded-character-assets.md`: reusable asset workflow
 - `references/bone-face-structure-layer.md`: face consistency and close-up identity
 - `references/full-asset-master-v3.md`: optional full scene / character / prop asset-production gate
+- `references/finished-character-sheet-prompt.md`: optional finished character sheet / GPT Image 2 multi-panel board prompt template
 - `references/live-action-shortdrama-casting-assets.md`: optional live-action short-drama casting workflow
 - `references/shortdrama-character-production-system.md`: optional short-drama relationship / wardrobe / audition system
 - `references/full-manual.md` or `SECTIONS/*.md`: older expanded theory and templates

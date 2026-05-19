@@ -70,6 +70,8 @@ For most tasks, produce a compact character packet:
 
 If the user asks for a simple prompt, include a prompt-ready anchor block after the card. If they need a reusable prompt packet or model-specific image prompt, convert the card into the local image-prompt framework used by the project.
 
+If the user asks for 成品角色图, 角色设定图, final character sheet, GPT Image 2 role sheet, or points to the multi-panel reference style, do not stop at the compact character packet. After the packet, output a finished character sheet prompt using `references/finished-character-sheet-prompt.md`. The prompt must explicitly require hero portrait, front/side/back turnaround, height/proportion lock, expression row, wardrobe/state variants, prop detail panels, action/skill panels, and material palette.
+
 ## Story Upstream Bridge
 
 Use the installed story skills as diagnosis before visual design when the user provides raw story text, a novel/IP, a loose outline, or asks why a character should look or behave a certain way. They are upstream inputs, not replacements for this skill.
@@ -144,6 +146,7 @@ For script-to-asset production, first separate `CHAR_`, `SCENE_`, and `PROP_` ca
 
 6. **Final character sheet last.**
    - Build the finished sheet from the passed bases. Use minimal readable labels and keep long biographies outside the generated image when text accuracy matters.
+   - A finished sheet must be a multi-panel design board, not a single portrait: title/identity, hero face, full-body front/side/back, height/proportion panel, expressions, wardrobe states, prop details, action/skill panels, and palette.
    - If a final sheet drifts, return to the failing base gate. Do not patch a full sheet that never passed proportion or turnaround QC.
 
 ## Runtime Flow
@@ -394,6 +397,7 @@ Read only when needed:
 | --- | --- |
 | Full original runtime manual | `references/full-manual.md` |
 | Full scene / character / prop asset production gate | `references/full-asset-master-v3.md` |
+| Finished character sheet / 成品角色图 / GPT Image 2 role board | `references/finished-character-sheet-prompt.md` |
 | Frontloaded character assets / 重在前期角色资产 | `references/frontloaded-character-assets.md` |
 | Optional live-action / short-drama casting assets | `references/live-action-shortdrama-casting-assets.md` |
 | Optional short-drama production character system | `references/shortdrama-character-production-system.md` |
